@@ -20,6 +20,7 @@ class Cliente extends Conexion{
         // Validar el NIT antes de guardar los datos
         if (!$this->validarNit($this->cliente_nit)) {
             echo "El NIT ingresado es inválido. No se guardarán los datos.";
+            echo '<button onclick="window.history.back();">Regresar al formulario</button>';
             // Detener la ejecución del código o redirigir a otra página, según sea necesario
             exit();
         }
@@ -28,7 +29,7 @@ class Cliente extends Conexion{
         $resultado = self::ejecutar($sql);
     
         if ($resultado) {
-            echo "Datos guardados correctamente. El NIT es válido.";
+            echo " ";
         } else {
             echo "Error al guardar los datos.";
         }
